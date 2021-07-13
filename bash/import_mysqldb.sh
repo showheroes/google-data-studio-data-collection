@@ -5,6 +5,8 @@
 echo '!!! CAUTION, THIS SCRIPT WILL OVERRITE THE DB!!!'
 echo 'DB Name to load dump into: '$1
 
+export $(grep -v '^#' ../.env | xargs)
+
 MyUSER="${DS_USER_ENV:-homestead}"
 MyPASS="${DS_PASS_ENV:-secret}"
 MyDBNAME=$1

@@ -6,19 +6,21 @@
 echo '!!! CAUTION, THIS SCRIPT WILL MAKE DUMPs!!!'
 echo 'Dumping start:'
 
+export $(grep -v '^#' ../.env | xargs)
+
 #DB reporting
 MyUSER_REPORTING="${REPORTING_USER_ENV:-homestead}"
-MyPASS_REPORTING="${REPORTING_USER_ENV:-secret}"
-MyDBNAME_REPORTING="${REPORTING_USER_ENV:-reporting}"
-MyHOST_REPORTING="${REPORTING_USER_ENV:-localhost}"
-MyPORT_REPORTING="${REPORTING_USER_ENV:-33060}"
+MyPASS_REPORTING="${REPORTING_PASS_ENV:-secret}"
+MyDBNAME_REPORTING="${REPORTING_DBNAME_ENV:-reporting}"
+MyHOST_REPORTING="${REPORTING_HOST_ENV:-localhost}"
+MyPORT_REPORTING="${REPORTING_PORT_ENV:-33060}"
 
 #DB adhero
 MyUSER_ADHERO="${ADHERO_USER_ENV:-homestead}"
-MyPASS_ADHERO="${ADHERO_USER_ENV:-secret}"
-MyDBNAME_ADHERO="${ADHERO_USER_ENV:-adhero}"
-MyHOST_ADHERO="${ADHERO_USER_ENV:-localhost}"
-MyPORT_ADHERO="${ADHERO_USER_ENV:-33060}"
+MyPASS_ADHERO="${ADHERO_PASS_ENV:-secret}"
+MyDBNAME_ADHERO="${ADHERO_DBNAME_ENV:-adhero}"
+MyHOST_ADHERO="${ADHERO_HOST_ENV:-localhost}"
+MyPORT_ADHERO="${ADHERO_PORT_ENV:-33060}"
 
 # Linux bin paths, change this if it can not be autodetected via which command
 MYSQL="$(which mysql)"
