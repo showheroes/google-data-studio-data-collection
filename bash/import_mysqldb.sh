@@ -20,7 +20,7 @@ NOW="$(date +"%d-%m-%Y")"
 FILE_DUMPS="../backups/mysql/$MyDBNAME.$NOW.sql"
 
 # Validate the database name
-if [[ ! $($MYSQL -e 'SHOW DATABASES' | grep "^${MyDBNAME}$") ]]; then
+if [[ ! $($MYSQL -h $MyHOST -P $MyPORT -u $MyUSER -p$MyPASS -e 'SHOW DATABASES' | grep "^${MyDBNAME}$") ]]; then
   echo "Database '${MyDBNAME}' doesn't exist. Please verify and try again."
   exit 0
 fi
