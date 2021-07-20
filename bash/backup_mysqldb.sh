@@ -55,7 +55,7 @@ FILE_ADHERO="$MBD/$MyDBNAME_ADHERO.$NOW.sql"
 
 OPTION="--single-transaction"
 # dumping reporting
-$MYSQLDUMP $OPTION -h $MyHOST_REPORTING -P $MyPORT_REPORTING -u $MyUSER_REPORTING -p$MyPASS_REPORTING $MyDBNAME_REPORTING vl_teams vl_players > $FILE_REPORTING
+$MYSQLDUMP $OPTION -h $MyHOST_REPORTING -P $MyPORT_REPORTING -u $MyUSER_REPORTING -p$MyPASS_REPORTING $MyDBNAME_REPORTING vl_teams vl_players presets_revenue_cache month_to_day_revenue > $FILE_REPORTING
 echo "Dump has been created $MyDBNAME_REPORTING"
 
 # dumping adhero
